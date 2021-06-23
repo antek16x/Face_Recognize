@@ -37,7 +37,7 @@ public class MenuActivity extends ListActivity {
     Uri imageUri;
 
     private static FaceServiceClient faceServiceClient =
-            new FaceServiceRestClient("df6bf8f8f8b04783a1a2106537fe47bb");
+            new FaceServiceRestClient("<YOUR API SUBSCRIPTION KEY>");
 
     private enum Action {
         LOAD_PICTURE, TAKE_A_PHOTO, EXIT, UNKNOWN
