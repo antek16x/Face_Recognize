@@ -7,7 +7,7 @@ _____
 
 <img align="right" src="https://github.com/antek16x/Face_Recognize/blob/master/Demo.gif" width="220">
 
-##Usage:
+## Usage:
 
 The application is quite easy to use: on the first page we see a menu where we can choose from: loading a photo from the device's memory, taking a photo with the camera or closing the application. After selecting or taking a photo, image analysis using AsyncTask and Microsoft Face API will automatically start to detect faces in the image and analyze them.
 
