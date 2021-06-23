@@ -12,3 +12,7 @@ _____
 The application is quite easy to use: on the first page we see a menu where we can choose from: loading a photo from the device's memory, taking a photo with the camera or closing the application. After selecting or taking a photo, image analysis using AsyncTask and Microsoft Face API will automatically start to detect faces in the image and analyze them.
 
 After processing the image, we will be transferred to the second activity, where information about the number of adults and children detected in the image will be displayed. After pressing the "See details" button we will see a ListView with generated thumbnail of each person and data about them. Microsoft Face API provides various features that can be found on their site. We can choose the attributes we are interested in by specifying them in AsyncTask.
+
+## Setup:
+
+**Please note that this app requires the use of Microsoft Azure's Face API. Without an API Key, you will not be able to use the app as it was intended. The following sections contain the full set of instructions to getting your own API key for free and using it in the app by changing a single line of code.
