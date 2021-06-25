@@ -41,3 +41,12 @@ You should now be able to see two different subscription keys that you can use. 
 
 ### Using the API Key in the app
 
+Head over to the [MenuActivity page](https://github.com/antek16x/Face_Recognize/blob/master/app/src/main/java/com/example/facerecognize/MenuActivity.java) in Android Studio since that is where the API Key will be used when creating the FaceServiceClient object.
+
+private static FaceServiceClient faceServiceClient =
+           new FaceServiceRestClient("<YOUR API SUBSCRIPTION KEY>");
+
+replace <YOUR API SUBSCRIPTION KEY> with one of your 2 keys from the Azure Portal. (If you haven't gotten your API Key yet, read the previous two sections above). 
+  
+Now that you have the Face API Key, you can use the app as it was intended. **Please note that if you are using the free, standard plan, you can only make 20 API transactions/calls per minute. Therefore, if that limit is exceeded, you may run into runtime errors**.
+  
