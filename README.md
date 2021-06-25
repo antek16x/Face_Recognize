@@ -55,14 +55,14 @@ Now that you have the Face API Key, you can use the app as it was intended. **Pl
 ### Detecting Particular Facial Attributes
 
 The face analysis happens in the `detectAndFrame` method of [MenuActivity.java](https://github.com/antek16x/Face_Recognize/blob/master/app/src/main/java/com/example/facerecognize/MenuActivity.java). More specifically, `detectAndFrame` -> `AsyncTask` -> `doInBackground`. This is what the code looks like for detecting age, gender, smile, and facial hair:
-
+```
 FaceServiceClient.FaceAttributeType[] faceAttr = new FaceServiceClient.FaceAttributeType[]{
                         FaceServiceClient.FaceAttributeType.Age,
                         FaceServiceClient.FaceAttributeType.Gender,
                         FaceServiceClient.FaceAttributeType.Smile,
                         FaceServiceClient.FaceAttributeType.FacialHair,
                 };
-
+```
 You can change it to something like `FaceServiceClient.FaceAttributeType.hairColor`. For more of the `FaceAttributeTypes`, you can check out one of the JSON files from the [Face API page](https://azure.microsoft.com/en-us/services/cognitive-services/face/).
 
 Now that you have detected the face attributes, you will have to change the [CustomAdapter.java](https://github.com/antek16x/Face_Recognize/blob/master/app/src/main/java/com/example/facerecognize/CustomAdapter.java) in order to display the results from the detection process. In the `getView` method, to get the facial attributes of a face, the code uses `faces[position]` to get an element in the array of type `Face`. Then, you can use `faces[position].faceAttributes.faceAttribute` to get information about a particular attribute. The code is below:
