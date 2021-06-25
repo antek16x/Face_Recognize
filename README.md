@@ -42,12 +42,10 @@ You should now be able to see two different subscription keys that you can use. 
 ### Using the API Key in the app
 
 Head over to the [MenuActivity page](https://github.com/antek16x/Face_Recognize/blob/master/app/src/main/java/com/example/facerecognize/MenuActivity.java) in Android Studio since that is where the API Key will be used when creating the `FaceServiceClient` object.
-
-`
+```
 private static FaceServiceClient faceServiceClient =
            new FaceServiceRestClient("<YOUR API SUBSCRIPTION KEY>");
-           `
-
+```
 replace `<YOUR API SUBSCRIPTION KEY>` with one of your 2 keys from the Azure Portal. (If you haven't gotten your API Key yet, read the previous two sections above). 
   
 Now that you have the Face API Key, you can use the app as it was intended. **Please note that if you are using the free, standard plan, you can only make 20 API transactions/calls per minute. Therefore, if that limit is exceeded, you may run into runtime errors**.
@@ -66,8 +64,7 @@ FaceServiceClient.FaceAttributeType[] faceAttr = new FaceServiceClient.FaceAttri
 You can change it to something like `FaceServiceClient.FaceAttributeType.hairColor`. For more of the `FaceAttributeTypes`, you can check out one of the JSON files from the [Face API page](https://azure.microsoft.com/en-us/services/cognitive-services/face/).
 
 Now that you have detected the face attributes, you will have to change the [CustomAdapter.java](https://github.com/antek16x/Face_Recognize/blob/master/app/src/main/java/com/example/facerecognize/CustomAdapter.java) in order to display the results from the detection process. In the `getView` method, to get the facial attributes of a face, the code uses `faces[position]` to get an element in the array of type `Face`. Then, you can use `faces[position].faceAttributes.faceAttribute` to get information about a particular attribute. The code is below:
-
-`
+```
 //Getting the Gender:
 faces[position].faceAttributes.gender
 
@@ -78,7 +75,5 @@ faces[position].faceAttributes.facialHair.beard
 faces[position].faceAttributes.facialHair.sideburns
 //Probability of having a moustache:
 faces[position].faceAttributes.facialHair.moustache
-
-`
-
+```
 #### Please note that if you do not specify a certain face attribute to be detected, then doing `faces[position].faceAttributes.thatFacialAttribute` in the `getView` method will give you errors. Additionally, certain attributes, like Head Position and Facial Hair, have attributes within themselves such as `faces[position].faceAttributes.facialHair.moustache` which can end in `moustache, sideburns, beard` or `faces[position].faceAttributes.headPose.yaw` which can end in `yaw, roll, pitch`.
