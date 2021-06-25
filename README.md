@@ -56,15 +56,12 @@ Now that you have the Face API Key, you can use the app as it was intended. **Pl
 
 The face analysis happens in the `detectAndFrame` method of [MenuActivity.java](https://github.com/antek16x/Face_Recognize/blob/master/app/src/main/java/com/example/facerecognize/MenuActivity.java). More specifically, `detectAndFrame` -> `AsyncTask` -> `doInBackground`. This is what the code looks like for detecting age, gender, smile, and facial hair:
 
-` 
 FaceServiceClient.FaceAttributeType[] faceAttr = new FaceServiceClient.FaceAttributeType[]{
                         FaceServiceClient.FaceAttributeType.Age,
                         FaceServiceClient.FaceAttributeType.Gender,
                         FaceServiceClient.FaceAttributeType.Smile,
                         FaceServiceClient.FaceAttributeType.FacialHair,
                 };
-                
-                `
 
 You can change it to something like `FaceServiceClient.FaceAttributeType.hairColor`. For more of the `FaceAttributeTypes`, you can check out one of the JSON files from the [Face API page](https://azure.microsoft.com/en-us/services/cognitive-services/face/).
 
